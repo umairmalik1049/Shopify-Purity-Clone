@@ -1,21 +1,21 @@
 @font-face {
    font-family: "instrumentsans_i5";
-   src: url("./fonts/instrumentsans_i5.woff2");
+   src: url("./instrumentsans_i5.woff2");
 }
 
 @font-face {
    font-family: "instrumentsans_i7";
-   src: url("./fonts/instrumentsans_i7.woff2");
+   src: url("./instrumentsans_i7.woff2");
 }
 
 @font-face {
    font-family: "instrumentsans_n5";
-   src: url("./fonts/instrumentsans_n5.woff2");
+   src: url("./instrumentsans_n5.woff2");
 }
 
 @font-face {
    font-family: "instrumentsans_n6";
-   src: url("./fonts/instrumentsans_n6.woff2");
+   src: url("./instrumentsans_n6.woff2");
 }
 
 :root {
