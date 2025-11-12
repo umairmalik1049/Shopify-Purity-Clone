@@ -1,0 +1,205 @@
+.featured_products {
+   width: 100%;
+   min-height: 100vh;
+}
+
+.featured_container {
+   width: 100%;
+   height: 100%;
+   padding-block: 4.6rem 4rem;
+   padding-inline: 60px;
+}
+
+.featured_title {
+   font-size: 40px;
+   text-align: center;
+}
+
+.fp_wrapper {
+   margin-top: 3rem;
+}
+
+.featured_tabs {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-block: 1.4rem;
+}
+
+.featured_tabs h3 {
+   font-size: 20px;
+   padding: 0px 30px 10px;
+   cursor: pointer;
+   color: rgb(110, 110, 110);
+   border-bottom: 1px solid rgb(193, 193, 193);
+}
+
+.featured_tabs h3:hover,
+.featured_tabs h3.active_tab {
+   color: black;
+}
+
+.featured_tabs h3.active_tab {
+   border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+.fp_swiper {
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: space-evenly;
+   padding-inline: 3rem;
+   flex-wrap: wrap;
+}
+
+.fp_swiper_slide {
+   margin-top: 2rem;
+}
+
+.fp_slide_img {
+   position: relative;
+   width: 280px;
+   height: 400px;
+   overflow: hidden;
+   border-radius: 18px;
+   cursor: pointer;
+}
+
+.fp_slide_img img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   position: absolute;
+   top: 0;
+   left: 0;
+   transition: all 0.6s ease-in-out;
+}
+
+/* Default state */
+.fp_slide_img .hover_img {
+   opacity: 0;
+   transform: scale(1);
+}
+
+/* Hover state: switch image and zoom effect */
+.fp_slide_img:hover .main_img {
+   opacity: 0;
+   transform: scale(1.1);
+}
+
+.fp_slide_img:hover .hover_img {
+   opacity: 1;
+   transform: scale(1.05);
+}
+
+/* Add-to-cart button */
+.fp_slide_img .fp_cart_btn {
+   position: absolute;
+   left: 50%;
+   bottom: 0%;
+   opacity: 0;
+   outline: none;
+   border: none;
+   width: 84%;
+   padding: 14px 16px;
+   border-radius: 24px;
+   cursor: pointer;
+   overflow: hidden;
+   background-color: white;
+   transform: translateX(-50%);
+   transition: all 0.25s ease-in-out;
+}
+
+.fp_slide_img:hover .fp_cart_btn {
+   opacity: 1;
+   bottom: 16px;
+}
+
+.fp_slide_img .fp_cart_btn span {
+   position: relative;
+   color: #1f473e;
+   font-weight: 600;
+   transition: all 0.3s ease-in-out;
+}
+
+.fp_slide_img .fp_cart_btn::before {
+   content: "";
+   position: absolute;
+   width: 120%;
+   height: 100%;
+   left: -5%;
+   bottom: -136%;
+   transform: rotate(6deg);
+   background-color: #1f473e;
+   transition: all 0.4s ease-in-out;
+}
+
+.fp_slide_img .fp_cart_btn:hover::before {
+   left: 0%;
+   bottom: 0%;
+   transform: rotate(0deg);
+}
+
+.fp_slide_img .fp_cart_btn:hover span {
+   color: white;
+}
+
+/* Card Content */
+.fp_slide_content {
+   padding: 16px 8px;
+}
+
+.fp_tags_box .tags {
+   font-size: 12px;
+   padding: 4px 10px;
+   color: rgb(91, 91, 91);
+   border-radius: 24px;
+   border: 1px solid rgb(199, 199, 199);
+   margin-right: 6px;
+}
+
+.fp_product_title {
+   font-size: 16px;
+   margin-block: 18px 8px;
+}
+
+.fp_price_box span {
+   font-size: 14px;
+}
+
+.fp_sale_price {
+   color: red;
+}
+
+.fb_actual_price {
+   color: rgb(84, 84, 84);
+   text-decoration: line-through;
+}
+
+/* Add these styles to your existing CSS */
+.fp_swiper {
+   transition: all 0.3s ease-in-out;
+   position: relative;
+}
+
+/* Exit animation - cards fade out and move down */
+.fp_swiper.exiting {
+   opacity: 0;
+   transform: translateY(20px);
+}
+
+/* Enter animation - cards fade in and move up from bottom */
+.fp_swiper.entering {
+   animation: slideUpFadeIn 0.3s ease-in-out forwards;
+}
+
+@keyframes slideUpFadeIn {
+   0% {
+      opacity: 0;
+      transform: translateY(20px);
+   }
+   100% {
+      opacity: 1;
+      transform: translateY(0);
+   }
+}

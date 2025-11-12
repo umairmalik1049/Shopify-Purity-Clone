@@ -1,0 +1,237 @@
+{{ 'template-featured-products.css' | asset_url | stylesheet_tag }}
+
+<section class="featured_products">
+  <div class="featured_container">
+    <!-- Featured Title -->
+    <h2 class="featured_title">Our Top Sellers</h2>
+
+    <!-- Featured Wrapper -->
+    <div class="fp_wrapper">
+      <!-- Featured Tabs -->
+      <div class="featured_tabs">
+        <h3 class="active_tab" data-tab="1">Best Seller</h3>
+        <h3 data-tab="2">What's Hot</h3>
+        <h3 data-tab="3">Value Sets</h3>
+      </div>
+
+      <!-- Featured Products Cards -->
+      <div class="fp_swiper_box">
+        <div class="fp_swiper" id="fp_swiper">
+          {% for i in (1..4) %}
+            <!-- Card -->
+            <div class="fp_swiper_slide">
+              <!-- Card Image -->
+              <div class="fp_slide_img">
+                <img
+                  src="{{ 'media/fp_featured_product_1.webp' | asset_url }}"
+                  alt="Featured Product"
+                  class="main_img"
+                  width="320"
+                  height="400">
+
+                <img
+                  src="{{ 'media/fp_featured_product_1_hover.webp' | asset_url }}"
+                  alt="Featured Product Hover"
+                  class="hover_img"
+                  width="320"
+                  height="400">
+
+                <button class="fp_cart_btn">
+                  <span>Add to Cart</span>
+                </button>
+              </div>
+
+              <!-- Card Content -->
+              <div class="fp_slide_content">
+                <div class="fp_tags_box">
+                  <span class="tags">Clay</span>
+                  <span class="tags">Serum</span>
+                </div>
+                <h3 class="fp_product_title">Pore Detox Scrub</h3>
+                <div class="fp_price_box">
+                  <span class="fp_sale_price">$70.00</span>
+                  <span class="fb_actual_price">$100.00</span>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+  const tabs = document.querySelectorAll('.featured_tabs h3');
+  const swiper = document.getElementById('fp_swiper');
+  
+  // Product data for each tab (4 cards each). Using same card template;
+  // images differ per tab so clicking a tab visibly replaces cards.
+  const tabProducts = {
+    "1": [
+      {
+        image: "{{ 'media/fp_featured_product_1.webp' | asset_url }}",
+        hover: "{{ 'media/fp_featured_product_1_hover.webp' | asset_url }}",
+        tags: ["Clay","Serum"],
+        title: "Pore Detox Scrub",
+        sale: "$70.00",
+        actual: "$100.00"
+      },
+      {
+        image: "{{ 'media/fp_featured_product_1.webp' | asset_url }}",
+        hover: "{{ 'media/fp_featured_product_1_hover.webp' | asset_url }}",
+        tags: ["Clay","Serum"],
+        title: "Pore Detox Scrub",
+        sale: "$70.00",
+        actual: "$100.00"
+      },
+      {
+        image: "{{ 'media/fp_featured_product_1.webp' | asset_url }}",
+        hover: "{{ 'media/fp_featured_product_1_hover.webp' | asset_url }}",
+        tags: ["Clay","Serum"],
+        title: "Pore Detox Scrub",
+        sale: "$70.00",
+        actual: "$100.00"
+      },
+      {
+        image: "{{ 'media/fp_featured_product_1.webp' | asset_url }}",
+        hover: "{{ 'media/fp_featured_product_1_hover.webp' | asset_url }}",
+        tags: ["Clay","Serum"],
+        title: "Pore Detox Scrub",
+        sale: "$70.00",
+        actual: "$100.00"
+      }
+    ],
+    "2": [
+      {
+        image: "{{ 'media/fp_featured_product_1.webp' | asset_url }}",
+        hover: "{{ 'media/fp_featured_product_1_hover.webp' | asset_url }}",
+        tags: ["Clay","Serum"],
+        title: "Pore Detox Scrub",
+        sale: "$70.00",
+        actual: "$100.00"
+      },
+      {
+        image: "{{ 'media/fp_featured_product_1.webp' | asset_url }}",
+        hover: "{{ 'media/fp_featured_product_1_hover.webp' | asset_url }}",
+        tags: ["Clay","Serum"],
+        title: "Pore Detox Scrub",
+        sale: "$70.00",
+        actual: "$100.00"
+      },
+      {
+        image: "{{ 'media/fp_featured_product_1.webp' | asset_url }}",
+        hover: "{{ 'media/fp_featured_product_1_hover.webp' | asset_url }}",
+        tags: ["Clay","Serum"],
+        title: "Pore Detox Scrub",
+        sale: "$70.00",
+        actual: "$100.00"
+      },
+      {
+        image: "{{ 'media/fp_featured_product_1.webp' | asset_url }}",
+        hover: "{{ 'media/fp_featured_product_1_hover.webp' | asset_url }}",
+        tags: ["Clay","Serum"],
+        title: "Pore Detox Scrub",
+        sale: "$70.00",
+        actual: "$100.00"
+      }
+    ],
+    "3": [
+      {
+        image: "{{ 'media/fp_featured_product_1.webp' | asset_url }}",
+        hover: "{{ 'media/fp_featured_product_1_hover.webp' | asset_url }}",
+        tags: ["Clay","Serum"],
+        title: "Pore Detox Scrub",
+        sale: "$70.00",
+        actual: "$100.00"
+      },
+      {
+        image: "{{ 'media/fp_featured_product_1.webp' | asset_url }}",
+        hover: "{{ 'media/fp_featured_product_1_hover.webp' | asset_url }}",
+        tags: ["Clay","Serum"],
+        title: "Pore Detox Scrub",
+        sale: "$70.00",
+        actual: "$100.00"
+      },
+      {
+        image: "{{ 'media/fp_featured_product_1.webp' | asset_url }}",
+        hover: "{{ 'media/fp_featured_product_1_hover.webp' | asset_url }}",
+        tags: ["Clay","Serum"],
+        title: "Pore Detox Scrub",
+        sale: "$70.00",
+        actual: "$100.00"
+      },
+      {
+        image: "{{ 'media/fp_featured_product_1.webp' | asset_url }}",
+        hover: "{{ 'media/fp_featured_product_1_hover.webp' | asset_url }}",
+        tags: ["Clay","Serum"],
+        title: "Pore Detox Scrub",
+        sale: "$70.00",
+        actual: "$100.00"
+      }
+    ]
+  };
+  
+  // Build the inner HTML string for 4 product cards (keeps same markup & classes)
+  function buildCards(tabIndex) {
+    const items = tabProducts[tabIndex] || tabProducts["1"];
+    let html = '';
+    items.forEach(p => {
+      html += `
+        <div class="fp_swiper_slide">
+          <div class="fp_slide_img">
+            <img src="${p.image}" alt="Featured Product" class="main_img" width="320" height="400">
+            <img src="${p.hover}" alt="Featured Product Hover" class="hover_img" width="320" height="400">
+            <button class="fp_cart_btn"><span>Add to Cart</span></button>
+          </div>
+          <div class="fp_slide_content">
+            <div class="fp_tags_box">
+              <span class="tags">${p.tags[0]}</span>
+              <span class="tags">${p.tags[1]}</span>
+            </div>
+            <h3 class="fp_product_title">${p.title}</h3>
+            <div class="fp_price_box">
+              <span class="fp_sale_price">${p.sale}</span>
+              <span class="fb_actual_price">${p.actual}</span>
+            </div>
+          </div>
+        </div>
+      `;
+    });
+    return html;
+  }
+  
+  let pendingTimeout = null;
+  tabs.forEach(tab => {
+    tab.addEventListener('click', function () {
+      const tabIndex = this.dataset.tab;
+  
+      // If clicking currently active tab, do nothing
+      if (this.classList.contains('active_tab')) return;
+  
+      // update active class
+      tabs.forEach(t => t.classList.remove('active_tab'));
+      this.classList.add('active_tab');
+  
+      // Add exit animation to current cards
+      swiper.classList.add('exiting');
+      
+      // After exit animation completes, replace content and animate in
+      if (pendingTimeout) clearTimeout(pendingTimeout);
+      pendingTimeout = setTimeout(() => {
+        swiper.innerHTML = buildCards(tabIndex);
+        swiper.classList.remove('exiting');
+        swiper.classList.add('entering');
+        
+        // Remove entering class after animation completes
+        setTimeout(() => {
+          swiper.classList.remove('entering');
+        }, 300);
+        
+        pendingTimeout = null;
+      }, 300);
+    });
+  });
+  });
+</script>

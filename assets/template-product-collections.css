@@ -1,0 +1,146 @@
+.product_collection_section {
+   width: 100%;
+   min-height: 100vh;
+   /* background-color: lightblue; */
+}
+
+.pc_main_container {
+   width: 100%;
+   height: 100%;
+   padding: 60px;
+   /* background-color: lightcoral; */
+}
+
+.pc_upper_container {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding-block: 20px;
+   gap: 100px;
+   /* background-color: lightgreen; */
+}
+
+.pc_upper_left_part {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 24px;
+   /* background-color: rosybrown; */
+}
+
+.pc_ul_img_box {
+   width: 280px;
+   height: 440px;
+   overflow: hidden;
+   border-radius: 16px;
+   cursor: pointer;
+   position: relative;
+}
+
+.pc_ul_img_box img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   transition: all 0.3s ease-in-out;
+}
+
+.pc_ul_img_box_content {
+   position: absolute;
+   bottom: 0px;
+   left: 24px;
+   color: white;
+   font-size: 24px;
+   font-family: var(--font-three);
+}
+
+.pc_ul_img_box_content sup {
+   font-size: 12px;
+}
+
+.pc_ul_img_box:hover img {
+   transform: scale(1.06);
+}
+
+.pc_upper_right_part {
+   width: 40%;
+   /* background-color: lightslategray; */
+}
+
+.pc_ur_header {
+   /* background-color: lightsalmon; */
+}
+
+.pc_ur_header_subtitle {
+   font-size: 18px;
+   font-weight: 100;
+   margin-bottom: 8px;
+   font-family: var(--font-three);
+}
+
+.pc_ur_header_title {
+   font-size: 40px;
+}
+
+.pc_ur_body {
+   margin-top: 24px;
+   /* background-color: blueviolet; */
+}
+
+.pc_ur_body_list_box {
+   list-style: none;
+}
+
+.pc_ur_body_list_box li {
+   font-size: 24px;
+   cursor: pointer;
+   padding-block: 18px;
+   font-family: var(--font-three);
+   border-bottom: 1px solid #cdcdcd;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.pc_ur_body_list_box li span:nth-of-type(1) sup {
+   font-size: 12px;
+}
+
+.pc_ur_body_list_box li span:nth-of-type(2) {
+   font-size: 12px;
+   border-radius: 50%;
+   width: 40px;
+   height: 40px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border: 1px solid #cdcdcd;
+}
+
+.pc_lower_collection {
+   margin-top: 48px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding-block: 24px;
+   gap: 24px;
+   /* background-color: brown; */
+}
+
+.pc_lc_info_box {
+   width: 30%;
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   text-align: center;
+   gap: 16px;
+   /* background-color: lightsalmon; */
+}
+
+.pc_lc_info_box h3 {
+   font-size: 20px;
+}
+
+.pc_lc_info_box p {
+   font-size: 16px;
+   font-family: var(--font-three);
+}

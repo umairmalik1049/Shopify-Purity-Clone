@@ -1,0 +1,155 @@
+{{ 'header.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'header.css' |  asset_url }}" defer></script>
+
+<header class="main_header">
+  <div class="header_container">
+    <h2 class="header_logo">
+      {% render 'logo-header' %}
+    </h2>
+
+    <nav
+      class="header_nav_links_wrapper"
+      role="navigation"
+      aria-label="Main navigation">
+      <a href="#">
+        <span>Home</span>
+      </a>
+
+      <!-- Skin Care (Mega Menu) -->
+      <div class="nav_item has-mega">
+        <a href="#">
+          <span>Skin Care</span>
+        </a>
+
+        <div class="mega_menu" aria-hidden="true">
+          <div class="mega_inner">
+            <div class="mega_columns">
+              <div class="mega_col">
+                <h4>All Products</h4>
+                <ul>
+                  <li><a href="#">Facial cleansers</a></li>
+                  <li><a href="#">Toners</a></li>
+                  <li><a href="#">Serums</a></li>
+                  <li><a href="#">Makeup removers</a></li>
+                  <li><a href="#">Sunscreens</a></li>
+                </ul>
+              </div>
+
+              <div class="mega_col">
+                <h4>Skin Type</h4>
+                <ul>
+                  <li><a href="#">Dry skin</a></li>
+                  <li><a href="#">Balanced skin</a></li>
+                  <li><a href="#">Sensitive skin</a></li>
+                  <li><a href="#">Oily skin</a></li>
+                  <li><a href="#">Combination skin</a></li>
+                </ul>
+              </div>
+
+              <div class="mega_col">
+                <h4>Concerns</h4>
+                <ul>
+                  <li><a href="#">Brightening boost</a></li>
+                  <li><a href="#">Dark spots</a></li>
+                  <li><a href="#">Anti-aging</a></li>
+                  <li><a href="#">Acne care</a></li>
+                </ul>
+              </div>
+
+              <div class="mega_col_img">
+                <div class="promo_box">
+                  <p class="promo_sub">Holiday Gift</p>
+                  <h3>Glow Starts Here!</h3>
+                  <a href="#" class="promo_btn">Get the Set</a>
+                  <img
+                    src="{{ 'media/mega_menu_image_1.webp' | asset_url }}"
+                    alt="Promo"
+                    width="300"
+                    height="150">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Makeup (Mega Menu) -->
+      <div class="nav_item has-mega">
+        <a href="#">
+          <span>Makeup</span>
+        </a>
+
+        <div class="mega_menu" aria-hidden="true">
+          <div class="mega_inner">
+            <div class="mega_columns">
+              <div class="mega_col">
+                <h4>Face</h4>
+                <ul>
+                  <li><a href="#">Foundation</a></li>
+                  <li><a href="#">Concealer</a></li>
+                  <li><a href="#">Powder</a></li>
+                </ul>
+              </div>
+
+              <div class="mega_col">
+                <h4>Eyes</h4>
+                <ul>
+                  <li><a href="#">Mascara</a></li>
+                  <li><a href="#">Eyeliner</a></li>
+                  <li><a href="#">Brow products</a></li>
+                </ul>
+              </div>
+
+              <div class="mega_col">
+                <h4>Lips</h4>
+                <ul>
+                  <li><a href="#">Lipsticks</a></li>
+                  <li><a href="#">Lip gloss</a></li>
+                  <li><a href="#">Lip liner</a></li>
+                </ul>
+              </div>
+
+              <div class="mega_col_img">
+                <div class="promo_box">
+                  <p class="promo_sub">New Collection</p>
+                  <h3>Perfect Your Look</h3>
+                  <a href="#" class="promo_btn">Shop Now</a>
+                  <img
+                    src="{{ 'media/mega_menu_image_2.webp' | asset_url }}"
+                    alt="Promo"
+                    width="300"
+                    height="150">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="#">
+        <span>Pages</span>
+      </a>
+
+      <!-- Build Your Bundle (plain link) -->
+      <div class="nav_item">
+        <a href="#">
+          <span>Build Your Bundle</span>
+        </a>
+      </div>
+
+      <!-- Theme Features (plain link) -->
+      <div class="nav_item">
+        <a href="#">
+          <span>Theme Features</span>
+        </a>
+      </div>
+    </nav>
+
+    <div class="header_nav_main_btns">
+      <span class="header_btns">{% render 'icon-header-search' %}</span>
+      <span class="header_btns">{% render 'icon-header-badge' %}</span>
+      <span class="header_btns">{% render 'icon-header-user' %}</span>
+      <span class="header_btns">{% render 'icon-header-cart' %}</span>
+    </div>
+  </div>
+</header>

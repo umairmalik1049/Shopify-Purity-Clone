@@ -1,10 +1,10 @@
 [
-  {
-    "name": "Theme settings",
-    "settings": []
-  },
-  {
-    "name": "Additional settings",
-    "settings": []
-  }
+   {
+      "name": "theme_info",
+      "theme_name": "purity_clone",
+      "theme_author": "unknownip",
+      "theme_version": "1.0.0",
+      "theme_documentation_url": "https://help.shopify.com/manual/online-store/themes",
+      "theme_support_url": "https://support.shopify.com/"
+   }
 ]

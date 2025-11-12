@@ -1,0 +1,112 @@
+{{ 'template-product-collections.css' | asset_url | stylesheet_tag }}
+
+  <section class="product_collection_section">
+  <!-- Main Container -->
+  <div class="pc_main_container">
+    <!-- Upper Container -->
+    <div class="pc_upper_container">
+      <!-- Left Part -->
+      <div class="pc_upper_left_part">
+        <div class="pc_ul_img_box">
+          <img
+            src="{{ 'media/product_collection_img_1.webp' |  asset_url }}"
+            alt="Product Collection Image"
+            width="200"
+            height="400">
+
+          <p class="pc_ul_img_box_content">Skin Care
+            <sup>31</sup>
+          </p>
+        </div>
+
+        <div class="pc_ul_img_box">
+          <img
+            src="{{ 'media/product_collection_img_2.webp' |  asset_url }}"
+            alt="Product Collection Image"
+            width="200"
+            height="400">
+
+          <p class="pc_ul_img_box_content">Make Up
+            <sup>33</sup>
+          </p>
+        </div>
+      </div>
+
+      <!-- Right Part -->
+      <div class="pc_upper_right_part">
+        <!-- Right Part Header -->
+        <div class="pc_ur_header">
+          <p class="pc_ur_header_subtitle">Self Care Product</p>
+          <h3 class="pc_ur_header_title">Explore Collections</h3>
+        </div>
+
+        <!-- Right Part Body -->
+        <div class="pc_ur_body">
+          <ul class="pc_ur_body_list_box">
+            <li>
+              <span>Glow Sets
+                <sup>20</sup>
+              </span>
+              <span>{% render 'icon-right-arrow' %}</span>
+            </li>
+            <li>
+              <span>Hair Care
+                <sup>11</sup>
+              </span>
+              <span>{% render 'icon-right-arrow' %}</span>
+            </li>
+            <li>
+              <span>
+                Body Care
+                <sup>5</sup>
+              </span>
+              <span>{% render 'icon-right-arrow' %}</span>
+            </li>
+            <li>
+              <span>Self—Care Tools
+                <sup>5</sup>
+              </span>
+              <span>{% render 'icon-right-arrow' %}</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lower Container -->
+    <div class="pc_lower_collection">
+      <!-- Info Box 1 -->
+      <div class="pc_lc_info_box">
+        {% render 'icon-info-box-1' %}
+        <h3>Cruelty-Free</h3>
+        <p>We're cruelty-free, always and forever, because we believe compassion is the true beauty.</p>
+      </div>
+      <!-- Info Box 2 -->
+      <div class="pc_lc_info_box">
+        {% render 'icon-info-box-2' %}
+        <h3>Cruelty-Free</h3>
+        <p>We're cruelty-free, always and forever, because we believe compassion is the true beauty.</p>
+      </div>
+      <!-- Info Box 3 -->
+      <div class="pc_lc_info_box">
+        {% render 'icon-info-box-3' %}
+        <h3>Cruelty-Free</h3>
+        <p>We're cruelty-free, always and forever, because we believe compassion is the true beauty.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+    const pcListItems = document.querySelectorAll(".pc_ur_body_list_box > li")
+  pcListItems.forEach((listItem) => {
+    listItem.addEventListener("mousemove", (event) => {
+        const { offsetX, offsetY } = event;
+  
+        const xPercent = (offsetX / listItem.clientWidth) * 100;
+        const yPercent = (offsetY / listItem.clientHeight) * 100;
+  
+        console.log(`X: ${xPercent.toFixed(2)}%, Y: ${yPercent.toFixed(2)}%`);
+    })
+  })
+</script>

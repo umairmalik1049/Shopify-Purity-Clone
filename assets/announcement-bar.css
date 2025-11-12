@@ -1,0 +1,36 @@
+.announcement_bar {
+   width: 100%;
+   height: 43px;
+   color: var(--color-white);
+   background-color: var(--color-dark-green);
+}
+
+.announcement_bar .announcement_bar_container {
+   width: 100%;
+   height: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 80px;
+}
+
+.announcement_bar_container .bar_title {
+   font-size: 14px;
+   font-family: var(--font-four);
+   margin: 0;
+}
+
+.announcement_bar_container .bar_chevron_btns {
+   width: 16px;
+   height: 16px;
+   cursor: pointer;
+}
+
+.announcement_bar_container .bar_chevron_btns svg {
+   color: var(--transparent-color-white);
+   transition: all 0.2s ease-in-out;
+}
+
+.announcement_bar_container .bar_chevron_btns:hover svg {
+   color: var(--color-white);
+}

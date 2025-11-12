@@ -1,0 +1,20 @@
+{{ 'announcement-bar.css' | asset_url | stylesheet_tag }}
+
+<div class="announcement_bar">
+  <div class="announcement_bar_container">
+
+    <span class="bar_chevron_btns">
+      {% render 'icon-chevron-left' %}
+    </span>
+
+    <div class="bar_titles_container">
+      <p class="bar_title">Hurry up: Buy 1—Get 1 free. Get Deals</p>
+    {% comment %} <p>Save 10% your first order. Get 10% Off</p> {% endcomment %}
+    {% comment %} <p>Ends tonight: Up to 75% Off. Shop Sale</p> {% endcomment %}
+    </div>
+
+    <span class="bar_chevron_btns">
+      {% render 'icon-chevron-right' %}
+    </span>
+  </div>
+</div>

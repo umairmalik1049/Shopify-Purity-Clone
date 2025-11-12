@@ -1,0 +1,272 @@
+.testi_testimonials_section {
+   background-color: var(--color-bg-color-1);
+}
+
+.testi_testimonials_container {
+   padding-block: 6rem 4rem;
+}
+
+.testi_testimonials_header {
+   line-height: 1.1;
+   color: #1d1d1f;
+}
+
+.testi_testimonials_header .testi_subtitle {
+   text-align: center;
+   font-size: 18px;
+}
+
+.testi_testimonials_header .testi_title {
+   text-align: center;
+   font-size: 40px;
+}
+
+/* --- Horizontal Slider Layout --- */
+.testi_testimonails_swiper {
+   margin: 3rem 3rem 1rem;
+   position: relative;
+   overflow: hidden;
+}
+
+.testi_swiper_wrapper {
+   display: flex;
+   gap: 2rem;
+   overflow-x: auto;
+   scroll-behavior: smooth;
+   scrollbar-width: none;
+}
+.testi_swiper_wrapper::-webkit-scrollbar {
+   display: none;
+}
+
+.testi_swiper_slide {
+   flex: 0 0 auto;
+   width: 28rem;
+   min-height: 32rem;
+   overflow: hidden;
+   border-radius: 20px;
+   background-color: white;
+}
+
+/* --- Navigation Buttons --- */
+.testi_slider-btn {
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   width: 48px;
+   height: 48px;
+   border-radius: 50%;
+   border: none;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   background: white; /* White background */
+   color: black; /* Icon color black */
+   cursor: pointer;
+   z-index: 10;
+   opacity: 0;
+   visibility: hidden;
+   transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.testi_slider-btn svg {
+   stroke: black;
+}
+
+.testi_testimonails_swiper:hover ~ .testi_slider-btn,
+.testi_testimonails_swiper:focus-within ~ .testi_slider-btn {
+   opacity: 1;
+   pointer-events: all;
+}
+
+.testi_testimonails_swiper:hover + .testi_slider-btn,
+.testi_testimonails_swiper:focus-within + .testi_slider-btn {
+   opacity: 1;
+   pointer-events: all;
+}
+
+.testi_testimonails_swiper:hover .testi_slider-btn,
+.testi_testimonails_swiper:focus-within .testi_slider-btn {
+   opacity: 1;
+   pointer-events: all;
+}
+
+.testi_testimonails_swiper:hover .testi_slider-btn {
+   opacity: 1;
+   visibility: visible;
+}
+
+.testi_slider-btn:hover {
+   background: #f2f2f2;
+   transform: translateY(-50%) scale(1.1);
+}
+
+.testi_left-btn {
+   left: 1.5rem;
+}
+
+.testi_right-btn {
+   right: 1.5rem;
+}
+
+/* --- Card Content Styles --- */
+.testi_container {
+   display: grid;
+   place-content: center;
+   position: relative;
+   overflow: hidden;
+   --position: 50%;
+}
+
+.testi_image-container {
+   max-width: 800px;
+   max-height: 90vh;
+}
+
+.testi_slider-image {
+   display: block;
+   max-width: 100%;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   object-position: left;
+}
+
+.testi_image-before {
+   position: absolute;
+   inset: 0;
+   width: var(--position);
+}
+
+.testi_slider {
+   position: absolute;
+   inset: 0;
+   cursor: pointer;
+   opacity: 0;
+   width: 100%;
+   height: 100%;
+}
+
+.testi_slider-line {
+   position: absolute;
+   inset: 0;
+   width: 0.1rem;
+   height: 100%;
+   background-color: white;
+   z-index: 10;
+   left: var(--position);
+   transform: translateX(-50%);
+   pointer-events: none;
+}
+
+.testi_slider-button {
+   position: absolute;
+   background-color: white;
+   color: black;
+   padding: 0.2rem 0.8rem;
+   border-radius: 100vw;
+   display: grid;
+   place-items: center;
+   top: 50%;
+   left: var(--position);
+   transform: translate(-50%, -50%) rotate(90deg);
+   pointer-events: none;
+   z-index: 100;
+}
+
+.testi_rating-badge {
+   position: absolute;
+   color: black;
+   padding: 4px 10px 4px 8px;
+   border-radius: 24px;
+   bottom: 16px;
+   right: 16px;
+   pointer-events: none;
+   background-color: white;
+   display: flex;
+   align-items: center;
+   gap: 4px;
+   justify-content: center;
+}
+
+.testi_rating-badge svg {
+   color: orange;
+}
+
+.testi_rating-badge span {
+   font-size: 14px;
+}
+
+/* Content */
+.testi_content_wrapper {
+   padding: 2rem;
+}
+
+.testi_upper_content {
+   border-bottom: 1px solid #e4e4e4;
+}
+
+.testi_name_box {
+   gap: 1.4rem;
+   display: flex;
+}
+
+.testi_name_box span {
+   font-size: 14px;
+   font-family: var(--font-one);
+   font-weight: 100;
+   font-style: italic;
+}
+
+.testi_name_box span i {
+   padding-right: 6px;
+   color: #4e4e4e;
+}
+
+.testi_review_box {
+   margin-top: 16px;
+}
+
+.testi_review_box h3 {
+   font-size: 18px;
+}
+
+.testi_review_box p {
+   margin-top: 6px;
+   font-size: 16px;
+   color: #4e4e4e;
+   line-height: 1.6;
+   font-family: var(--font-three);
+}
+
+.testi_lower_content {
+   display: flex;
+   margin-top: 16px;
+}
+
+.testi_lower_img_box {
+   width: 64px;
+   height: 64px;
+   overflow: hidden;
+   margin-right: 24px;
+   border-radius: 50%;
+}
+
+.testi_lower_img_box img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+.testi_lower_details {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   color: #333333;
+   font-family: var(--font-three);
+}
+
+.testi_lower_details p {
+   margin-bottom: 12px;
+}

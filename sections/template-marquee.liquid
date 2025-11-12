@@ -1,0 +1,100 @@
+<style>
+  .marquee-banner {
+    background-color: #f2efe6;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .marquee {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+  }
+
+  .marquee__inner {
+    display: flex;
+    width: max-content;
+    animation: marqueeMove 25s linear infinite;
+  }
+
+  /* Pause on hover */
+  .marquee__inner:hover {
+    animation-play-state: paused;
+  }
+
+  .marquee__content {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 120px;
+    margin: 0;
+    padding: 20px 60px;
+  }
+
+  .marquee__content li {
+    font-size: 16px;
+    color: #111;
+    position: relative;
+    white-space: nowrap;
+    position: relative;
+  }
+
+  /* Bullet separator */
+  .marquee__content li::before {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    top: 50%;
+    left: -25%;
+    border-radius: 24px;
+    transform: translateY(-50%);
+    background-color: black;
+  }
+
+  /* Animation (moves continuously left-to-right) */
+  @keyframes marqueeMove {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+</style>
+
+<!-- sections/marquee-banner.liquid -->
+<section class="marquee-banner">
+  <div class="marquee">
+    <div class="marquee__inner">
+      <ul class="marquee__content">
+        <li>Trusted by over 70k customers</li>
+        <li>Cruelty free no animal testing</li>
+        <li>Free shipping on $175 orders</li>
+        <li>Trusted by over 70k customers</li>
+      </ul>
+      <ul class="marquee__content" aria-hidden="true">
+        <li>Trusted by over 70k customers</li>
+        <li>Cruelty free no animal testing</li>
+        <li>Free shipping on $175 orders</li>
+        <li>Trusted by over 70k customers</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+  const marqueeInner = document.querySelector(".marquee__inner");
+  const contentWidth = marqueeInner.scrollWidth / 2;
+  
+  // Duplicate the content dynamically to ensure seamless scroll
+  const clone = marqueeInner.cloneNode(true);
+  marqueeInner.parentElement.appendChild(clone);
+  
+  // Adjust animation speed dynamically based on width if desired
+  });
+</script>

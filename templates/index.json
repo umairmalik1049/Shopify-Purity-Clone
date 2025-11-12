@@ -1,8 +1,26 @@
 {
    "sections": {
-      "template": {
+      "hero": {
          "type": "template-hero"
+      },
+      "marquee": {
+         "type": "template-marquee"
+      },
+      "featured-products": {
+         "type": "template-featured-products"
+      },
+      "product-collections": {
+         "type": "template-product-collections"
+      },
+      "testimonials": {
+         "type": "template-testimonials"
       }
    },
-   "order": ["template"]
+   "order": [
+      "hero",
+      "marquee",
+      "featured-products",
+      "product-collections",
+      "testimonials"
+   ]
 }

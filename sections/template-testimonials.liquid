@@ -1,0 +1,163 @@
+{{ 'template-testimonials.css' | asset_url | stylesheet_tag }}
+
+<section class="testi_testimonials_section">
+  <div class="testi_testimonials_container">
+    <!-- Header -->
+    <div class="testi_testimonials_header">
+      <p class="testi_subtitle">Loved by 17k+ Customers</p>
+      <h2 class="testi_title">What They're Saying</h2>
+    </div>
+
+    <!-- Cards Wrapper -->
+    <div class="testi_testimonails_swiper">
+      <!-- Navigation Buttons -->
+      <button class="testi_slider-btn testi_left-btn" aria-label="Previous">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          width="22"
+          height="22">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15.75 19.5L8.25 12l7.5-7.5" />
+        </svg>
+      </button>
+      <button class="testi_slider-btn testi_right-btn" aria-label="Next">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          width="22"
+          height="22">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+        </svg>
+      </button>
+
+      <div class="testi_swiper_wrapper">
+        {% for i in (1..5) %}
+          <div class="testi_swiper_slide">
+            <div class="testi_container">
+              <div class="testi_image-container">
+                <img
+                  src="{{ 'media/testi_before_img_2.webp' | asset_url }}"
+                  alt="Before Image"
+                  class="testi_image-before testi_slider-image"
+                  width="300"
+                  height="300">
+                <img
+                  src="{{ 'media/testi_after_img_2.webp' | asset_url }}"
+                  alt="After Image"
+                  class="testi_image-after testi_slider-image"
+                  width="300"
+                  height="300">
+              </div>
+              <input
+                type="range"
+                min="0"
+                max="100"
+                value="50"
+                class="testi_slider">
+              <div class="testi_slider-line"></div>
+              <div class="testi_slider-button">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  width="18"
+                  height="18">
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+              </div>
+              <div class="testi_rating-badge">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  width="14"
+                  height="14">
+                  <path
+                    fill-rule="evenodd"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006
+                       5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527
+                       1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12
+                       18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425
+                       l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305
+                       l5.404-.434 2.082-5.005Z"
+                    clip-rule="evenodd" />
+                </svg>
+                <span>5.0</span>
+              </div>
+            </div>
+
+            <div class="testi_content_wrapper">
+              <div class="testi_upper_content">
+                <div class="testi_name_box">
+                  <h4>Carie H.</h4>
+                  <span>
+                    <i>✓</i>Verified Customer</span>
+                </div>
+                <div class="testi_review_box">
+                  <h3>Smells divine, looks radiant</h3>
+                  <p>This is hands down the prettiest glow I've ever had on my skin. The soft shimmer is noticeable ...</p>
+                </div>
+              </div>
+              <div class="testi_lower_content">
+                <div class="testi_lower_img_box">
+                  <img
+                    src="{{ 'media/testi_product_img_1.webp' | asset_url }}"
+                    alt="Testimonial Product"
+                    width="60"
+                    height="60">
+                </div>
+                <div class="testi_lower_details">
+                  <p>Intra Glow Toner</p>
+                  <span>$140.00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Before/After image slider
+  document.querySelectorAll(".testi_container").forEach(container => {
+    const testi_slider = container.querySelector(".testi_slider");
+    testi_slider.addEventListener("input", e => {
+      container.style.setProperty("--position", `${e.target.value}%`);
+    });
+  });
+  
+  // Horizontal testimonial slider logic
+  const testi_wrapper = document.querySelector(".testi_swiper_wrapper");
+  const testi_leftBtn = document.querySelector(".testi_left-btn");
+  const testi_rightBtn = document.querySelector(".testi_right-btn");
+  
+  const testi_slides = document.querySelectorAll(".testi_swiper_slide");
+  const testi_slideWidth = testi_slides[0].offsetWidth + 32; // include gap (2rem)
+  
+  testi_leftBtn.addEventListener("click", () => {
+    testi_wrapper.scrollBy({ left: -testi_slideWidth, behavior: "smooth" });
+  });
+  
+  testi_rightBtn.addEventListener("click", () => {
+    testi_wrapper.scrollBy({ left: testi_slideWidth, behavior: "smooth" });
+  });
+</script>
