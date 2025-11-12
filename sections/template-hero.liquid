@@ -1,0 +1,62 @@
+{{ 'template-hero.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'template-hero.js' |  asset_url }}" defer></script>
+
+<section class="hero-carousel">
+  <div class="slides">
+    <!-- FIRST SLIDE WITH VIDEO -->
+    <div class="slide active">
+      <video
+        class="bg-video"
+        autoplay
+        muted
+        loop
+        playsinline>
+        <source src="{{ 'video_hero.mp4' | asset_url }}" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <div class="slide-content">
+        <span class="tag">Sensitive Skin</span>
+        <h1>Calm Skin<br>All Day Hydration</h1>
+        <p>Hyaluronic + Ceramides. Barrier-safe hydration.</p>
+        <a href="#" class="btn">Shop Hydration</a>
+      </div>
+    </div>
+
+    <!-- SECOND SLIDE (IMAGE) -->
+    <div class="slide" style="background-image: url('{{ 'image_1.webp' |  asset_url }}');">
+      <div class="slide-content">
+        <span class="tag">Natural Glow</span>
+        <h1>Brighten Your<br>Everyday Look</h1>
+        <p>Vitamin C powered skincare for radiant glow.</p>
+        <a href="#" class="btn">Shop Glow</a>
+      </div>
+    </div>
+
+    <!-- THIRD SLIDE (IMAGE) -->
+    <div class="slide" style="background-image: url('{{ 'image_2.webp' |  asset_url }}');">
+      <div class="slide-content">
+        <span class="tag">Deep Repair</span>
+        <h1>Revive. Restore.<br>Rejuvenate.</h1>
+        <p>Peptides and collagen boosters for youthful skin.</p>
+        <a href="#" class="btn">Shop Repair</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pagination + Arrows -->
+  <div class="pagination">
+    <button class="arrow prev">&#10094;</button>
+    <div class="bars">
+      <div class="bar active">
+        <span></span>
+      </div>
+      <div class="bar">
+        <span></span>
+      </div>
+      <div class="bar">
+        <span></span>
+      </div>
+    </div>
+    <button class="arrow next">&#10095;</button>
+  </div>
+</section>
